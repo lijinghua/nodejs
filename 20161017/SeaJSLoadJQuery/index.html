@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	
+</head>
+<body>
+	<script src='lib/sea.js'></script>
+	<script>
+        // seajs.use 使用模块,main会加载jquery
+        //
+		seajs.use('./main.js',function(jquery){
+			$(document).ready(function(){
+				alert('hello world');
+			})
+		}); 
+	</script>
+</body>
+</html>

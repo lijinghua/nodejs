@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+<!-- 引入requirejs -->
+	<script src='./lib/require.js'></script>
+	<script>
+	   // require.config({
+
+	   // });
+	   
+	   // seajs.config({
+
+	   // });
+		// 使用requirejs,调用require函数加载需要的模块
+		// require 需要的依赖项写到数组中
+		require(['./main.js'],function(jquery){
+			$(document).ready(function(){
+				alert('hello world');
+			});
+		});
+	</script>
+</body>
+</html>
