@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src='./jquery-3.1.1.min.js'></script>
+</head>
+<body>
+	用户：<input id="nameId" type="text" name="username" value="" placeholder="">
+	<br>
+	密码:<input id="passwordId" type="password" name="password" value="" placeholder="">
+    <br>
+    <button id="myBtn" type="button">获取更多</button>
+
+    <script>
+    	$(document).ready(function(){
+    		$("#myBtn").click(function(){
+    			var nameValue = $('#nameId').val();
+    			var passwordValue = $('#passwordId').val();
+
+    			$.ajax({
+    				url:"http://127.0.0.1:8888/getUserInfo",
+    				type:"get",
+    				data:{"username":nameValue,"password":passwordValue},
+    				success:function(data,textState){
+    					var result = JSON.parse(data);
+    					console.log(result);
+    				},
+    				error:function(err){
+    					console.log('请求有问题'+err);
+    				}
+    			});
+    		});
+    	});
+    </script>
+</body>
+</html>
